@@ -35,20 +35,26 @@
 
 <script>
 
-    var anim;
-    var elem = document.getElementById('bodymovin')
-    var animData = {
-        container: elem,
-        renderer: 'svg',
-        loop: false,
-        autoplay: true,
-        rendererSettings: {
-            progressiveLoad:false
-        },
-        path: 'https://rawgit.com/parks275/WebAnimTest/master/cm_logo.json'
-    };
-    anim = bodymovin.loadAnimation(animData);
-  
+   animContainer = document.getElementById('bodymovin');
+
+var params = {
+    container: animContainer,
+    renderer: 'svg',
+    loop: false,
+    autoplay:false,
+    autoloadSegments: false,
+    path: 'https://rawgit.com/parks275/WebAnimTest/master/cm_logo.json'
+
+};
+
+var anim;
+
+anim = bodymovin.loadAnimation(params);
+animContainer.addEventListener("mouseover", myScript);
+
+function myScript(){
+    anim.play();
+}
 
 </script>
 </body>
