@@ -48,7 +48,10 @@
         path: 'https://rawgit.com/parks275/WebAnimTest/master/cm_logo.json'
     };
     anim = bodymovin.loadAnimation(animData);
-    bodymovin.setSubframeRendering(true);
+    anim.addEventListener('complete',doalert);
+
+    function doalert() {
+        console.log('test completed');
 
 </script>
 </body>
